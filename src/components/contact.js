@@ -15,12 +15,19 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const formData = { "form-name": "contact", name, email, message };
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
+      body: encode(formData),
     })
-      .then(() => alert("Message sent!"))
+      .then(() => {
+        alert("Message sent!");
+
+        const whatsappMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=918972947446&text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappUrl, "_blank");
+      })
       .catch((error) => alert(error));
   }
 
@@ -72,7 +79,7 @@ export default function Contact() {
             Hire Me
           </h2>
           <p className="leading-relaxed mb-5 text-white">
-            If you wanna know more about me or wanna connect. Fell free to connect.
+            If you wanna know more about me or wanna connect. Feel free to connect.
           </p>
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-400">

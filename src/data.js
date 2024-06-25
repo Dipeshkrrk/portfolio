@@ -24,13 +24,14 @@ export const projects = [
     link: "https://easyfileshare.vercel.app/",
   },
   {
-    title: "Epic Todo App",
+    title: "Gym website",
     subtitle: "React Hooks",
     description:
-      "This is a regular TODO web application, which helps you to write your todo things",
+      "This is a regular gym website for a local business.",
     image: "./project-4.gif",
-    link: "#",
+    link: "https://cyberreachonline.github.io/NV-FIT-HUB/",
   },
+
 ];
 
 export const testimonials = [
